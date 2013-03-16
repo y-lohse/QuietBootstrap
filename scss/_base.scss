@@ -36,57 +36,6 @@ $media-mobile: 320px;
 	}
 }
 
-//clearfix
-.clearfix:before,
-.clearfix:after{
-	content: "";
-    display: table;
-    clear: both;
-}
-
-//box sizing
-*, *:after, *:before{
-	@include box-sizing(border-box);
-}
-
-//grid system
-$grid-gutters: 20px;
-
-.grid{
-	margin: 0 0 $grid-gutters 0;
-	@extend .clearfix;
-}
-%grid-col{
-	//pour écrans et tablette, on garde la grille donc c'est la meme chose
-	float: left;
-	padding-right: $grid-gutters;
-	.grid &:last-of-type{
-		padding-right: 0;
-	}
-		
-	@include breakpoint(smartphone){
-		//on annule la grille sur smartphone
-		float: none;
-		padding: 0;
-		width: 100%;
-	}
-}
-[class*='col-']{
-	@extend %grid-col;
-}
-.col-1-1{
-	width: 100%;
-}
-.col-1-2{
-	width: 50%;
-}
-.col-1-3{
-	width: 33.33%;
-}
-.col-2-3{
-	width: 66.66%;
-}
-
 //images qui font pas de la merde quand elles sont trop grandes
 img{
 	max-width: 100%;
