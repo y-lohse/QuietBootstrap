@@ -41,3 +41,7 @@ video {
 *, *:after, *:before{
 	@include box-sizing(border-box);
 }
+
+img{
+    border: 0;
+}
