@@ -13,11 +13,6 @@ $media-small-desktop: 960px;
 $media-tablet: 768px;
 $media-mobile: 320px;
 
-@mixin font-size($pxsize){
-	font-size: #{$pxsize}px; 
-	font-size: #{$pxsize/10}rem;
-}
-
 @mixin breakpoint($point){
 	@if $point == big-desktop{
 		@media	only screen and (min-width: $media-large-desktop){

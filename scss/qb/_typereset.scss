@@ -1,0 +1,10 @@
+//map 1px = 1rem
+html{
+	font-size: 62.5%;
+}
+
+//mixin for rem font size
+@mixin fs-rem($pxsize){
+	font-size: #{$pxsize}px; 
+	font-size: #{$pxsize/10}rem;
+}
