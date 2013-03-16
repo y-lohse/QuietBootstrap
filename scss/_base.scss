@@ -11,7 +11,7 @@ $default-transition-duration: 0.2s;
 $media-large-desktop: 1280px;
 $media-small-desktop: 960px;
 $media-tablet: 768px;
-$media-smartphone: 320px;
+$media-mobile: 320px;
 
 @mixin font-size($pxsize){
 	font-size: #{$pxsize}px; 
