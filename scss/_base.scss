@@ -21,26 +21,7 @@ ol{
 	list-style-type: decimal;
 }
 
-textarea {
-	overflow: auto;
-}
 
-/* Hand cursor on clickable input elements */
-label,input[type="button"],input[type="submit"],input[type="image"],button{
-	cursor: pointer;
-}
-input[type="radio"]{
-	vertical-align: text-bottom;
-}
-input[type="checkbox"]{
-	vertical-align: middle;
-}
-/* Make buttons play nice in IE:
-   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
-button {
-	width: auto;
-	overflow: visible;
-}
 
 /* Hide for both screenreaders and browsers:
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
