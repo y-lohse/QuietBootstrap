@@ -1,0 +1,206 @@
+@import "compass";
+@import "normalize";
+@import "typeplate";
+
+$body-copy-font: Helvetica, Arial;
+$heading-font: Georgia, Trebuchet, Helvetica, Arial;
+
+$default-transition-function: ease-in;
+$default-transition-duration: 0.2s;
+
+$media-large-desktop: 1280px;
+$media-small-desktop: 960px;
+$media-tablet: 768px;
+$media-smartphone: 320px;
+
+@mixin font-size($pxsize){
+	font-size: #{$pxsize}px; 
+	font-size: #{$pxsize/10}rem;
+}
+
+@mixin breakpoint($point){
+	@if $point == big-desktop{
+		@media	only screen and (min-width: $media-large-desktop){
+			@content;
+		}
+	}
+	@if $point == small-desktop{
+		@media	only screen and (min-width: $media-small-desktop) and (max-width: $media-large-desktop - 1px){
+			@content;
+		}
+	}
+	@if $point == tablet{
+		@media only screen and (min-width: $media-tablet) and (max-width: $media-small-desktop - 1px){
+			@content;
+		}
+	} 
+	@if $point == mobile{
+		@media only screen and (max-width: $media-tablet - 1px){
+			@content;
+		}
+	}
+}
+
+//clearfix
+.clearfix:before,
+.clearfix:after{
+	content: "";
+    display: table;
+    clear: both;
+}
+
+//box sizing
+*, *:after, *:before{
+	@include box-sizing(border-box);
+}
+
+//grid system
+$grid-gutters: 20px;
+
+.grid{
+	margin: 0 0 $grid-gutters 0;
+	@extend .clearfix;
+}
+%grid-col{
+	//pour écrans et tablette, on garde la grille donc c'est la meme chose
+	float: left;
+	padding-right: $grid-gutters;
+	.grid &:last-of-type{
+		padding-right: 0;
+	}
+		
+	@include breakpoint(smartphone){
+		//on annule la grille sur smartphone
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+}
+[class*='col-']{
+	@extend %grid-col;
+}
+.col-1-1{
+	width: 100%;
+}
+.col-1-2{
+	width: 50%;
+}
+.col-1-3{
+	width: 33.33%;
+}
+.col-2-3{
+	width: 66.66%;
+}
+
+//images qui font pas de la merde quand elles sont trop grandes
+img{
+	max-width: 100%;
+}
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover,a:active{
+	outline: none;
+}
+ul,ol{
+	list-style-position: inside;
+	padding: 0;
+	margin: 0;
+}
+ol{
+	list-style-type: decimal;
+}
+
+/* Set sub, sup without affecting line-height: gist.github.com/413930 */
+sub,sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+
+textarea {
+	overflow: auto;
+}
+
+/* Hand cursor on clickable input elements */
+label,input[type="button"],input[type="submit"],input[type="image"],button{
+	cursor: pointer;
+}
+input[type="radio"]{
+	vertical-align: text-bottom;
+}
+input[type="checkbox"]{
+	vertical-align: middle;
+}
+/* Make buttons play nice in IE:
+   www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+button {
+	width: auto;
+	overflow: visible;
+}
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden {
+	display: none;
+}
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+@media print {
+	* {
+		background: transparent !important;
+		color: black !important;
+		text-shadow: none !important;
+		filter: none !important;
+		-ms-filter: none !important;
+	} /* Black prints faster: sanbeiji.com/archives/953 */
+	a,a:visited {
+		color: #444 !important;
+		text-decoration: underline;
+	}
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+	.ir a:after,a[href ^="javascript:"]:after,a[href ^="#"]:after {
+		content: "";
+	} /* Don't show links for images, or javascript/internal links */
+	pre,blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+	thead {
+		display: table-header-group;
+	} /* css-discuss.incutio.com/wiki/Printing_Tables */
+	tr,img {
+		page-break-inside: avoid;
+	}
+	@page {
+		margin: 0.5cm;
+	}
+	p,h2,h3 {
+		orphans: 3;
+		widows: 3;
+	}
+	h2,h3 {
+		page-break-after: avoid;
+	}
+}
