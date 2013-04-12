@@ -15,15 +15,8 @@ ol{
 	list-style-type: decimal;
 }
 
-
-
-/* Hide for both screenreaders and browsers:
-   css-discuss.incutio.com/wiki/Screenreader_Visibility */
-.hidden {
-	display: none;
-}
-/* Hide only visually, but have it available for screenreaders: by Jon Neal.
-  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+//Hide only visually, but have it available for screenreaders: by Jon Neal.
+//www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden
 .visuallyhidden {
 	border: 0;
 	clip: rect(0, 0, 0, 0);
