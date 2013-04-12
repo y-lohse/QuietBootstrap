@@ -68,6 +68,11 @@ svg:not(:root){
     overflow: hidden;
 }
 
+//Addresses styling for `hidden` attribute not present in IE 8/9
+[hidden] {
+    display: none;
+}
+
 table{
     border-collapse: collapse;
     border-spacing: 0;
