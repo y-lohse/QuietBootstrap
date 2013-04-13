@@ -1,2 +1,8 @@
 @import "base";
-@import "qb/reset";
+@import "qb/all";
+
+h1{
+	@include width-matches($tablet){
+		color: red !important;
+	}
+}

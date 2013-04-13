@@ -1,9 +1,56 @@
 //breakpoints
-$media-large-desktop: 1280px;
-$media-small-desktop: 960px;
-$media-tablet: 768px;
-$media-mobile: 320px;
+$large-desktop: 1280px;
+$small-desktop: 960px;
+$tablet: 768px;
+$mobile: 320px;
 
+$qb-breakpoints: $mobile, $tablet, $small-desktop, $large-desktop;
+
+@mixin width-above($breakpoint){
+	@media only screen and (min-width: $breakpoint){
+		@content;
+	}
+}
+@mixin width-below($breakpoint){
+	@media only screen and (max-width: $breakpoint){
+		@content;
+	}
+}
+@mixin width-between($start, $end){
+	@media only screen and (min-width: $start) and (max-width: $end - 1px){
+		@content;
+	}
+}
+@mixin width-matches($size){
+	$i: 1;
+	@each $breakpoint in $qb-breakpoints{
+		@if ($breakpoint == $size){
+			//we've hit the correct breakpoint
+			
+			@if $i == 1{
+				//smallest item in the list
+				@include width-below(nth($qb-breakpoints, 2) - 1px){
+					@content;
+				}
+			}
+			@else if $i == length($qb-breakpoints){
+				//biggest item in the list
+				@include width-above($size){
+					@content;
+				}
+			}
+			@else{
+				//any other item
+				@include width-between($size, nth($qb-breakpoints, $i+1)){
+					@content;
+				}
+			}
+		}
+		$i: $i+1;
+	}
+}
+
+/*
 //mixin formedia queries
 @mixin breakpoint($point){
 	@if $point == large-desktop{
@@ -26,7 +73,7 @@ $media-mobile: 320px;
 			@content;
 		}
 	}
-}
+}*/
 
 //prevents some elements from overflowing
 img, 
