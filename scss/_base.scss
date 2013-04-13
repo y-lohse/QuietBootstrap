@@ -5,23 +5,3 @@ $heading-font: Georgia, Trebuchet, Helvetica, Arial;
 
 $default-transition-function: ease-in;
 $default-transition-duration: 0.2s;
-
-ul,ol{
-	list-style-position: inside;
-}
-ol{
-	list-style-type: decimal;
-}
-
-//Hide only visually, but have it available for screenreaders: by Jon Neal.
-//www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden
-.visuallyhidden {
-	border: 0;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}

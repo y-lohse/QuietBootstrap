@@ -10,6 +10,14 @@ html{
 	font-size: #{$pxsize/10}rem;
 }
 
+//defualt list styles
+ul,ol{
+	list-style-position: inside;
+}
+ol{
+	list-style-type: decimal;
+}
+
 //sets sub and sup without affecting line-height (gist.github.com/413930)
 sub,
 sup{
