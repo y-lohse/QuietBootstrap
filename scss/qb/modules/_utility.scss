@@ -1,7 +1,10 @@
 //defining a properry in rem unit with a px fallback
+html{
+	font-size: #{$root-font-size}px;
+}
 @mixin rem-sizing($property, $pxsize){
 	#{property}: #{$pxsize}px; 
-	#{property}: #{$pxsize/16}rem;
+	#{property}: #{$pxsize/$root-font-size}rem;
 }
 
 //clearfix
