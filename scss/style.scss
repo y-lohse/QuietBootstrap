@@ -1,6 +1,13 @@
 @import "base";
 @import "qb/all";
 
+$large-desktop: 1280px;
+$small-desktop: 960px;
+$tablet: 768px;
+$mobile: 320px;
+
+@include register-breakpoints($mobile, $tablet, $small-desktop, $large-desktop);
+
 h1{
 	@include width-matches($tablet){
 		color: red !important;
