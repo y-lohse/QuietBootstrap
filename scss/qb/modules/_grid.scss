@@ -2,7 +2,6 @@ $grid-gutters: 20px;
 $grid-collapse-below: 500px !default;
 
 .grid{
-	margin: 0 0 $grid-gutters 0;
 	@extend .clearfix;
 }
 %grid-col{
