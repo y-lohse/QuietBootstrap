@@ -1,5 +1,5 @@
 $grid-gutters: 20px;
-$collapse-below: 500px !default;
+$grid-collapse-below: 500px !default;
 
 .grid{
 	margin: 0 0 $grid-gutters 0;
@@ -29,7 +29,7 @@ $collapse-below: 500px !default;
 	width: 66.66%;
 }
 
-@media only screen and (max-width: $collapse-below){
+@media only screen and (max-width: $grid-collapse-below){
 	[class*='col-']{
 		width: 100%;
 		padding-right: 0;
