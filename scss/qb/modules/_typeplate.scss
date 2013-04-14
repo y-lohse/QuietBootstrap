@@ -32,7 +32,7 @@
 $weight: normal;
 $line-height: 1.65;
 $font-size: 112.5; // percentage value (16 * 112.5% = 18px)
-$font-base: 16 * ($font-size/100); // converts our percentage to a pixel value
+$font-base: 16 * ($font-size/100) !default; // converts our percentage to a pixel value
 $measure: $font-base * $line-height;
 $font-family: $body-copy-font;
 $font-family-sans: sans-serif;
