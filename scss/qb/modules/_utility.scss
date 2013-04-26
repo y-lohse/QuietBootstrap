@@ -3,8 +3,8 @@ html{
 	font-size: #{$font-base}px;
 }
 @mixin rem-sizing($property, $pxsize){
-	#{property}: #{$pxsize}px; 
-	#{property}: #{$pxsize/$font-base}rem;
+	#{$property}: #{$pxsize}px; 
+	#{$property}: #{$pxsize/$font-base}rem;
 }
 
 //clearfix
