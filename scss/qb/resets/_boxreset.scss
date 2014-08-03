@@ -39,7 +39,7 @@ video {
 
 //switching box model
 *, *:after, *:before{
-	@include box-sizing(border-box);
+	box-sizing: border-box;
 }
 
 
